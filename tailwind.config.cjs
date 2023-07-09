@@ -24,6 +24,7 @@ module.exports = {
     textColor: {
       skin: {
         base: withOpacity("--color-text-base"),
+        muted: withOpacity("--color-text-muted"),
         accent: withOpacity("--color-accent"),
         inverted: withOpacity("--color-fill"),
       },
@@ -57,7 +58,17 @@ module.exports = {
       transparent: "transparent",
     },
     fontFamily: {
-      mono: ["IBM Plex Mono", "monospace"],
+      mono: ["Vollkorn", "IBM Plex Mono", "monospace"],
+    },
+    fontSize: {
+      sm: "1rem",
+      base: "1.2rem",
+      lg: "1.4rem",
+      xl: "1.5rem",
+      "2xl": "1.8rem",
+      "3xl": "2rem",
+      "4xl": "2.4rem",
+      "5xl": "3.2rem",
     },
     // },
   },
