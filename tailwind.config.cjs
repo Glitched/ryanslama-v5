@@ -17,10 +17,6 @@ module.exports = {
       sm: "640px",
     },
 
-    // Uncomment the following extend
-    // if existing Tailwind color palette will be used
-
-    // extend: {
     textColor: {
       skin: {
         base: withOpacity("--color-text-base"),
@@ -59,18 +55,32 @@ module.exports = {
     },
     fontFamily: {
       mono: ["Vollkorn", "IBM Plex Mono", "monospace"],
+      sans: ["Inter", "IBM Plex", "Helvetica", "Arial", "sans-serif"],
     },
     fontSize: {
+      xs: "0.6rem",
       sm: "1rem",
-      base: "1.2rem",
+      base: "1.1rem",
       lg: "1.4rem",
       xl: "1.5rem",
       "2xl": "1.8rem",
       "3xl": "2rem",
       "4xl": "2.4rem",
       "5xl": "3.2rem",
+      "6xl": "4.4rem",
     },
-    // },
+    letterSpacing: {
+      wide: "0.1rem",
+    },
+    extend: {
+      gridTemplateColumns: {
+        main: "10rem 32rem"
+      },
+      borderRadius: {
+        xl: "1.4rem",
+        xxl: "1.8rem",
+      }
+    }
   },
   plugins: [require("@tailwindcss/typography")],
 };

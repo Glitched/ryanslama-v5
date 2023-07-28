@@ -27,7 +27,7 @@ const socialImageURL = new URL(
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="font-size: 18px;">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -59,7 +59,7 @@ const socialImageURL = new URL(
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -77,7 +77,24 @@ const socialImageURL = new URL(
 
     <script is:inline src="/toggle-theme.js"></script>
   </head>
-  <body>
+  <body class="antialiased">
     <slot />
   </body>
+  <script>
+    document.addEventListener("keydown", function (event) {
+      // Check if an input, textarea, or select element is currently focused
+      const tagName = document.activeElement.tagName;
+
+      // Windows: Ctrl+K, Mac: Cmd+K, or "/" (if not focused on input, textarea or select)
+      if (
+        ((event.ctrlKey || event.metaKey) && event.key === "k") ||
+        (event.key === "/" &&
+          tagName !== "INPUT" &&
+          tagName !== "TEXTAREA" &&
+          tagName !== "SELECT")
+      ) {
+        window.location.href = "/search";
+      }
+    });
+  </script>
 </html>
