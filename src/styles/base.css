@@ -9,7 +9,7 @@
     --color-text-base: 44, 43, 51;
     --color-text-muted: 83, 83, 88;
     --color-accent: 53, 51, 65;
-    --color-card: 234, 225, 215;
+    --color-card: 125, 121, 122;
     --color-card-muted: 205, 205, 205;
     --color-border: 44, 43, 51;
   }
@@ -99,7 +99,7 @@
 
   /* width */
   ::-webkit-scrollbar {
-    @apply w-3;
+    @apply w-2;
   }
 
   /* Track */
@@ -109,12 +109,12 @@
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    @apply bg-skin-card;
+    @apply rounded-full bg-skin-card;
   }
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-skin-card-muted;
+    @apply bg-skin-muted;
   }
 }
 
