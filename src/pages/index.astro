@@ -2,8 +2,9 @@
 import Card from "@components/Card";
 import Footer from "@components/Footer.astro";
 import LinkButton from "@components/LinkButton.astro";
-import { SOCIALS } from "@config";
+// import { SOCIALS } from "@config";
 import Layout from "@layouts/Layout.astro";
+import { File, MagnifyingGlass } from "@phosphor-icons/react";
 import getSortedPosts from "@utils/getSortedPosts";
 import slugify from "@utils/slugify";
 import { getCollection } from "astro:content";
@@ -13,14 +14,15 @@ const posts = await getCollection("blog");
 const sortedPosts = getSortedPosts(posts);
 // const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 
-const socialCount = SOCIALS.filter(social => social.active).length;
+// const socialCount = SOCIALS.filter(social => social.active).length;
+const ICON_SIZE = "1rem";
 ---
 
 <Layout>
   <div class="mx-a grid grid-cols-main justify-center">
     <nav>
       <div
-        class="mt-12 h-[180px] w-[180px] overflow-clip rounded-xl bg-[#9e8e60] bg-gradient-to-r from-[#756a50] to-[#b19a74]"
+        class="mb-4 mt-12 h-[160px] w-[160px] overflow-clip rounded-xl bg-[#9e8e60] bg-gradient-to-r from-[#756a50] to-[#b19a74]"
       >
         <img
           src="public/profile.jpeg"
@@ -29,20 +31,30 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         />
       </div>
       <ul>
-        <li>Search <span class="text-skin-muted">⌘K</span></li>
         <LinkButton
           href="/search"
-          className={`focus-outline p-3 sm:p-1`}
+          className="focus-outline"
           ariaLabel="search"
           title="Search"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" class="scale-125 sm:scale-100"
-            ><path
-              d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z"
-            ></path>
-          </svg>
+          <li>
+            <MagnifyingGlass size={ICON_SIZE} className="mb-1" />
+            <span>Search</span>
+            <span class="text-skin-muted">⌘K</span>
+          </li>
         </LinkButton>
-        <li>Resume</li>
+
+        <LinkButton
+          href="/public/resume.pdf"
+          className="focus-outline"
+          ariaLabel="resume"
+          title="Resume"
+        >
+          <li>
+            <File size={ICON_SIZE} className="mb-1" />
+            <span>Resume</span>
+          </li>
+        </LinkButton>
       </ul>
     </nav>
     <main id="main-content">

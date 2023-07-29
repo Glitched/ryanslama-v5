@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@astrojs/rss": "^2.4.1",
+    "@phosphor-icons/react": "^2.0.10",
     "@resvg/resvg-js": "^2.4.1",
     "@swup/head-plugin": "^1.3.0",
     "@swup/slide-theme": "^1.0.5",
