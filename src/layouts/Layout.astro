@@ -27,7 +27,7 @@ const socialImageURL = new URL(
 ---
 
 <!DOCTYPE html>
-<html lang="en" style="font-size: 18px;">
+<html lang="en" style="font-size: 20px;">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -59,7 +59,7 @@ const socialImageURL = new URL(
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Vollkorn:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
 
@@ -94,6 +94,13 @@ const socialImageURL = new URL(
           tagName !== "SELECT")
       ) {
         window.location.href = "/search";
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      // Check for the 'Escape' key
+      if (event.key === "Escape" || event.key === "Esc") {
+        window.history.back();
       }
     });
   </script>

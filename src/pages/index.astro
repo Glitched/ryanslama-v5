@@ -4,7 +4,12 @@ import Footer from "@components/Footer.astro";
 import LinkButton from "@components/LinkButton.astro";
 // import { SOCIALS } from "@config";
 import Layout from "@layouts/Layout.astro";
-import { File, MagnifyingGlass } from "@phosphor-icons/react";
+import {
+  ArrowRight,
+  File,
+  GithubLogo,
+  MagnifyingGlass,
+} from "@phosphor-icons/react";
 import getSortedPosts from "@utils/getSortedPosts";
 import slugify from "@utils/slugify";
 import { getCollection } from "astro:content";
@@ -20,9 +25,9 @@ const ICON_SIZE = "1rem";
 
 <Layout>
   <div class="mx-a grid grid-cols-main justify-center">
-    <nav>
+    <nav class="mr-8">
       <div
-        class="mb-4 mt-12 h-[160px] w-[160px] overflow-clip rounded-xl bg-[#9e8e60] bg-gradient-to-r from-[#756a50] to-[#b19a74]"
+        class="mb-4 mt-12 w-full overflow-clip rounded-xl bg-[#9e8e60] bg-gradient-to-r from-[#756a50] to-[#b19a74]"
       >
         <img
           src="public/profile.jpeg"
@@ -30,7 +35,19 @@ const ICON_SIZE = "1rem";
           class="transition-all ease-in-out hover:scale-105"
         />
       </div>
-      <ul>
+      <ul class="flex flex-col items-stretch">
+        <LinkButton
+          href="https://GitHub.com/Glitched"
+          className="focus-outline"
+          ariaLabel="github"
+          title="GitHub"
+        >
+          <li>
+            <GithubLogo size={ICON_SIZE} className="mb-1" />
+            <span>GitHub</span>
+          </li>
+        </LinkButton>
+
         <LinkButton
           href="/search"
           className="focus-outline"
@@ -40,12 +57,12 @@ const ICON_SIZE = "1rem";
           <li>
             <MagnifyingGlass size={ICON_SIZE} className="mb-1" />
             <span>Search</span>
-            <span class="text-skin-muted">⌘K</span>
+            <span class="float-right text-skin-card">⌘K</span>
           </li>
         </LinkButton>
 
         <LinkButton
-          href="/public/resume.pdf"
+          href="resume.pdf"
           className="focus-outline"
           ariaLabel="resume"
           title="Resume"
@@ -61,7 +78,7 @@ const ICON_SIZE = "1rem";
       <section id="hero">
         <div class="ml-auto">
           <h1>Hey, I'm Ryan</h1>
-          <p class="text-base text-skin-accent antialiased">
+          <p class="text-base text-skin-muted antialiased">
             I’m a senior software engineer on Slack's Product Security
             Foundations team. I like weird music, modern board games, podcasts,
             and oxford commas.
@@ -107,11 +124,7 @@ const ICON_SIZE = "1rem";
         <div class="all-posts-btn-wrapper">
           <LinkButton href="/posts">
             All Posts
-            <svg xmlns="http://www.w3.org/2000/svg"
-              ><path
-                d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
-              ></path>
-            </svg>
+            <ArrowRight size={ICON_SIZE} className="mb-1" />
           </LinkButton>
         </div>
       </section>
@@ -119,42 +132,42 @@ const ICON_SIZE = "1rem";
   </div>
 
   <Footer />
+
+  <style>
+    /* ===== Hero Section ===== */
+    #hero {
+      @apply max-w-lg pb-6 pt-8;
+    }
+    #hero h1 {
+      @apply inline-block text-6xl font-bold;
+    }
+    #hero .rss-link {
+      @apply mb-6;
+    }
+    #hero .rss-icon {
+      @apply mb-2 h-6 w-6 scale-110 fill-skin-accent sm:mb-3 sm:scale-125;
+    }
+    #hero p {
+      @apply my-2;
+    }
+    .social-wrapper {
+      @apply mt-4 flex flex-col sm:flex-row sm:items-center;
+    }
+    .social-links {
+      @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
+    }
+
+    /* ===== Featured & Recent Posts Sections ===== */
+    #featured,
+    #recent-posts {
+      @apply max-w-lg pb-6;
+    }
+    #featured h2,
+    #recent-posts h2 {
+      @apply text-2xl font-semibold tracking-wide;
+    }
+    .all-posts-btn-wrapper {
+      @apply my-8 text-center;
+    }
+  </style>
 </Layout>
-
-<style>
-  /* ===== Hero Section ===== */
-  #hero {
-    @apply max-w-lg pb-6 pt-8;
-  }
-  #hero h1 {
-    @apply inline-block text-6xl font-bold;
-  }
-  #hero .rss-link {
-    @apply mb-6;
-  }
-  #hero .rss-icon {
-    @apply mb-2 h-6 w-6 scale-110 fill-skin-accent sm:mb-3 sm:scale-125;
-  }
-  #hero p {
-    @apply my-2;
-  }
-  .social-wrapper {
-    @apply mt-4 flex flex-col sm:flex-row sm:items-center;
-  }
-  .social-links {
-    @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
-  }
-
-  /* ===== Featured & Recent Posts Sections ===== */
-  #featured,
-  #recent-posts {
-    @apply max-w-lg pb-6;
-  }
-  #featured h2,
-  #recent-posts h2 {
-    @apply text-2xl font-semibold tracking-wide;
-  }
-  .all-posts-btn-wrapper {
-    @apply my-8 text-center;
-  }
-</style>

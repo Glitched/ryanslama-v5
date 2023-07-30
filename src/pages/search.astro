@@ -22,14 +22,6 @@ const searchList = posts.map(({ data }) => ({
   <Header activeNav="search" />
   <Main pageTitle="Search">
     <Search client:load searchList={searchList} />
-    <script>
-      document.addEventListener("keydown", function (event) {
-        // Check for the 'Escape' key
-        if (event.key === "Escape" || event.key === "Esc") {
-          window.history.back();
-        }
-      });
-    </script>
   </Main>
   <Footer />
 </Layout>
