@@ -12,6 +12,7 @@
     --color-card: 194, 166, 138;
     --color-card-muted: 255, 250, 245;
     --color-border: 44, 43, 51;
+    --color-bg-bright: 255, 251, 247;
 
     /* Code */
     --astro-code-color-text: #575279;
@@ -28,12 +29,13 @@
   }
   html[data-theme="dark"] {
     --color-fill: 44, 43, 51;
-    --color-text-base: 255, 237, 230;
-    --color-text-muted: 233, 214, 194;
-    --color-accent: 253, 200, 141;
+    --color-text-base: 232, 234, 243;
+    --color-text-muted: 175, 180, 199;
+    --color-accent: 180, 192, 232;
     --color-card: 155, 155, 155;
     --color-card-muted: 30, 29, 36;
     --color-border: 233, 214, 194;
+    --color-bg-bright: 62, 61, 70;
 
     /* Code */
     /*  */

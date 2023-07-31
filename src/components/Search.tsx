@@ -82,7 +82,7 @@ export default function SearchBar({ searchList }: Props) {
         </span>
         <input
           className={
-            "block w-full rounded-full bg-[#fffbf7] py-3 pl-12 pr-3 " +
+            "block w-full rounded-full bg-skin-bright py-3 pl-12 pr-3 " +
             "placeholder:italic placeholder:text-opacity-75 " +
             "focus:outline-none	"
           }

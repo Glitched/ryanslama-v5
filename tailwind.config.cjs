@@ -34,6 +34,7 @@ module.exports = {
         card: withOpacity("--color-card"),
         "card-muted": withOpacity("--color-card-muted"),
         muted: withOpacity("--color-text-muted"),
+        bright: withOpacity("--color-bg-bright"),
       },
     },
     outlineColor: {
@@ -56,8 +57,8 @@ module.exports = {
       transparent: "transparent",
     },
     fontFamily: {
-      serif: ["Vollkorn", "IBM Plex Mono", "monospace"],
-      mono: ["Fira Code", "IBM Plex Mono", "monospace"],
+      serif: ["Vollkorn", 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', "serif"],
+      mono: ["Fira Code", "IBM Plex Mono", "Menlo", "monospace"],
       sans: ["Inter", "IBM Plex", "Helvetica", "Arial", "sans-serif"],
     },
     fontSize: {
@@ -82,6 +83,13 @@ module.exports = {
       borderRadius: {
         xl: "1.4rem",
         xxl: "1.8rem",
+      },
+      typography: {
+        DEFAULT: {
+css: {
+
+        }
+        }
       }
     }
   },
