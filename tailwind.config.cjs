@@ -36,6 +36,7 @@ module.exports = {
         "card-muted": withOpacity("--color-card-muted"),
         muted: withOpacity("--color-text-muted"),
         bright: withOpacity("--color-bg-bright"),
+        code: withOpacity("--color-bg-code"),
       },
     },
     outlineColor: {
@@ -85,15 +86,18 @@ module.exports = {
         xl: "1.4rem",
         xxl: "1.8rem",
       },
-      typography: {
+      typography: (theme) => ({
         DEFAULT: {
           css: {
             'img': {
               'borderStyle': 'none', // Disable border on images
             },
+            'p, li, blockquote': {
+              color: `${theme('textColor.skin.muted')} !important`, // Use custom color for paragraph text
+            },
           }
         }
-      }
+      })
     }
   },
   plugins: [require("@tailwindcss/typography")],

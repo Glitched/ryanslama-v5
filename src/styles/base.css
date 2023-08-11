@@ -13,6 +13,7 @@
     --color-card-muted: 168, 161, 153;
     --color-border: 44, 43, 51;
     --color-bg-bright: 255, 251, 247;
+    --color-bg-code: 255, 248, 240;
 
     /* Code */
     --astro-code-color-text: #575279;
@@ -36,6 +37,7 @@
     --color-card-muted: 30, 29, 36;
     --color-border: 175, 180, 199;
     --color-bg-bright: 62, 61, 70;
+    --color-bg-code: 30, 29, 36;
 
     /* Code */
     /*  */
@@ -94,7 +96,7 @@
     prose-strong:!text-skin-base
 
 
-    prose-code:rounded prose-code:bg-skin-card-muted
+    prose-code:rounded prose-code:bg-skin-code
     prose-code:bg-opacity-75 prose-code:p-1 prose-code:!text-skin-base
     prose-code:before:!content-[''] prose-code:after:!content-['']
     prose-pre:!text-skin-base prose-ol:!text-skin-base
@@ -128,6 +130,11 @@
   .prose h2#table-of-contents + p {
     @apply hidden;
   }
+  /* .prose p,
+  .prose li,
+  .prose blockquote {
+    @apply text-skin-muted;
+  } */
 
   /* ===== scrollbar ===== */
   html {
