@@ -87,9 +87,11 @@ module.exports = {
       },
       typography: {
         DEFAULT: {
-css: {
-
-        }
+          css: {
+            'img': {
+              'borderStyle': 'none', // Disable border on images
+            },
+          }
         }
       }
     }
