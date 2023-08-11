@@ -6,7 +6,7 @@ export interface Props {
   className?: string;
 }
 
-export default function Datetime({ datetime, size = "sm", className }: Props) {
+export default function Datetime({ datetime, className }: Props) {
   return (
     <div className={`flex items-center opacity-80 ${className}`}>
       <span className="sr-only">Posted on:</span>
