@@ -10,7 +10,7 @@
     --color-text-muted: 83, 83, 88;
     --color-accent: 146, 90, 35;
     --color-card: 194, 166, 138;
-    --color-card-muted: 255, 250, 245;
+    --color-card-muted: 168, 161, 153;
     --color-border: 44, 43, 51;
     --color-bg-bright: 255, 251, 247;
 
@@ -146,7 +146,7 @@
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-skin-card;
+    @apply rounded-full bg-skin-card-muted;
   }
 
   /* Handle on hover */
