@@ -24,8 +24,10 @@ const ICON_SIZE = "1rem";
 ---
 
 <Layout>
-  <div class="mx-a grid-rows-main mt-12 grid justify-center md:grid-cols-main">
-    <nav class="mr-8">
+  <div
+    class="mx-a grid-rows-main grid justify-center md:mt-12 md:grid-cols-main"
+  >
+    <nav class="md:mr-8">
       <div
         class="w-10 overflow-clip rounded-md bg-[#9e8e60] bg-gradient-to-r from-[#756a50] to-[#b19a74] md:mb-4 md:mt-4 md:w-full md:rounded-xl"
       >
@@ -35,7 +37,7 @@ const ICON_SIZE = "1rem";
           class="transition-all ease-in-out hover:scale-105"
         />
       </div>
-      <ul class="flex place-content-evenly items-stretch md:flex-col">
+      <ul class="flex flex-col place-content-evenly items-stretch">
         <LinkButton
           href="https://GitHub.com/Glitched"
           className="focus-outline"

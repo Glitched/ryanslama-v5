@@ -10,7 +10,7 @@ export interface Props {
 const { noMarginTop = false } = Astro.props;
 ---
 
-<footer class={`${noMarginTop ? "" : "mt-auto"}`}>
+<footer class={`${noMarginTop ? "" : "mt-auto"} text-skin-muted`}>
   <div class="footer-wrapper">
     <Socials centered />
     <div class="copyright-wrapper">
