@@ -1,7 +1,7 @@
 ---
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
-import Search from "@components/Search";
+import SearchComponent from "@components/Search";
 import { SITE } from "@config";
 import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
@@ -21,7 +21,7 @@ const searchList = posts.map(({ data }) => ({
 <Layout title={`Search | ${SITE.title}`}>
   <Header activeNav="search" />
   <Main pageTitle="Search">
-    <Search client:load searchList={searchList} />
+    <SearchComponent client:load searchList={searchList} />
   </Main>
   <Footer />
   <script>
@@ -32,9 +32,11 @@ const searchList = posts.map(({ data }) => ({
           if (e.keyCode === 48 + i) {
             // Check for key codes from 1-9
             const links = document.querySelectorAll("a > h2"); // Select all h2 tags inside a tags
-            if (links[i - 1]) {
-              // Check if the link exists
-              window.location.href = links[i - 1].parentElement.href; // Navigate to the link
+            const link = links[i - 1];
+            // Check if the link exists
+            if (link) {
+              const href = (link.parentElement as HTMLAnchorElement)?.href;
+              window.location.href = href; // Navigate to the link
             }
           }
         }
