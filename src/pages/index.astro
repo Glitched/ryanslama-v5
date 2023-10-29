@@ -27,53 +27,53 @@ const ICON_SIZE = "1rem";
   <div
     class="mx-a grid-rows-main grid justify-center md:mt-12 md:grid-cols-main"
   >
-    <nav class="md:mr-8">
+    <nav class="max-md:m-4 max-md:flex md:mr-8">
       <div
-        class="w-10 overflow-clip rounded-md bg-[#9e8e60] bg-gradient-to-r from-[#756a50] to-[#b19a74] md:mb-4 md:mt-4 md:w-full md:rounded-xl"
+        class="w-20 overflow-clip rounded-md bg-[#9e8e60] bg-gradient-to-r from-[#756a50] to-[#b19a74] max-md:mr-4 md:mb-4 md:mt-4 md:w-full md:rounded-xl"
       >
         <img
           src="public/profile.jpeg"
-          alt="Headshot of Ryan Slama"
+          alt="Portrait photo of Ryan Slama"
           class="transition-all ease-in-out hover:scale-105"
         />
       </div>
       <ul class="flex flex-col place-content-evenly items-stretch">
-        <LinkButton
-          href="https://GitHub.com/Glitched"
-          className="focus-outline"
-          ariaLabel="github"
-          title="GitHub"
-        >
-          <li>
+        <li>
+          <LinkButton
+            href="https://GitHub.com/Glitched"
+            className="focus-outline"
+            ariaLabel="github"
+            title="GitHub"
+          >
             <GithubLogo size={ICON_SIZE} className="mb-1" />
             <span>GitHub</span>
-          </li>
-        </LinkButton>
+          </LinkButton>
+        </li>
 
-        <LinkButton
-          href="/search"
-          className="focus-outline"
-          ariaLabel="search"
-          title="Search"
-        >
-          <li>
+        <li>
+          <LinkButton
+            href="/search"
+            className="focus-outline"
+            ariaLabel="search"
+            title="Search"
+          >
             <MagnifyingGlass size={ICON_SIZE} className="mb-1" />
             <span>Search</span>
-            <span class="float-right text-skin-card">⌘K</span>
-          </li>
-        </LinkButton>
+            <span class="float-right ml-2 text-skin-card">⌘K</span>
+          </LinkButton>
+        </li>
 
-        <LinkButton
-          href="resume.pdf"
-          className="focus-outline"
-          ariaLabel="resume"
-          title="Resume"
-        >
-          <li>
+        <li>
+          <LinkButton
+            href="resume.pdf"
+            className="focus-outline"
+            ariaLabel="resume"
+            title="Resume"
+          >
             <File size={ICON_SIZE} className="mb-1" />
             <span>Resume</span>
-          </li>
-        </LinkButton>
+          </LinkButton>
+        </li>
       </ul>
     </nav>
     <main id="main-content">
